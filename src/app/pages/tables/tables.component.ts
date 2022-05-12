@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientHttpService } from 'src/app/services/client-http.service';
+import { Router } from '@angular/router';
 import { OPENINGS } from './openings';
+import { OpeningsService } from './openings-service';
 import { OPEN_POSITION_ACTIONS } from './openPositionActions';
 
 @Component({
@@ -10,16 +11,29 @@ import { OPEN_POSITION_ACTIONS } from './openPositionActions';
 })
 export class TablesComponent implements OnInit {
 
-  openPositions: any = OPENINGS;
+  // openPositions: any = OPENINGS;
   openPositionsActions = OPEN_POSITION_ACTIONS;
 
-  constructor(private http: ClientHttpService) {
+  constructor(private openingsService: OpeningsService, private router: Router) {
   }
 
   ngOnInit() {
-    this.http.getRequest('/referral/v1/openings').subscribe((res) => {
-      this.openPositions = res;
-    });
+    this.openingsService.getOpenings();
+  }
+
+  get openPositions() {
+    return this.openingsService.openPositions;
+  }
+
+  get isLoading() {
+    return this.openingsService.loading;
+  }
+
+  handleOpenignAction(action: string, jiraId: string) {
+    if(action === 'view') {
+      console.log("URL", `view-job-posting?opening-id=${jiraId}`);
+      this.router.navigate([`view-job-posting?opening-id=${jiraId}`]);
+    }
   }
 
 }

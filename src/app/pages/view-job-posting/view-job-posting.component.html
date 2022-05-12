@@ -26,13 +26,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Job title</label>
-                    <input type="text" id="input-title" disabled class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
+                    <input [value]="getOpeningData.title" type="text" id="input-title" disabled class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-username">Department</label>
-                    <input disabled type="text" id="input-department" class="form-control form-control-alternative" placeholder="Department" value="lucky.jesse">
+                    <label class="form-control-label" for="input-username">Job summary</label>
+                    <input [value]="getOpeningData.jobSummary" disabled type="text" id="input-department" class="form-control form-control-alternative" placeholder="Department" value="lucky.jesse">
                   </div>
                 </div>
               </div>
@@ -40,7 +40,7 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Job description</label>
-                    <textarea disabled class="form-control" id="input-job-description" rows="3" placeholder="Job profile here ..."></textarea>
+                    <textarea [value]="getOpeningData.jobDesc" disabled class="form-control" id="input-job-description" rows="3" placeholder="Job profile here ..."></textarea>
                     <!-- <input type="textarea" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse"> -->
                   </div>
                 </div>
@@ -48,8 +48,8 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-period">Recruitment period</label>
-                    <input disabled type="date" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
+                    <label class="form-control-label" for="input-period">Posted on</label>
+                    <input [value]="getOpeningData.postedOn" disabled type="date" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -77,7 +77,7 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-period">Experience</label>
-                    <input disabled type="text" id="input-experience" class="form-control form-control-alternative" placeholder="Experience" value="lucky.jesse">
+                    <input [value]="getOpeningData.experience" disabled type="text" id="input-experience" class="form-control form-control-alternative" placeholder="Experience" value="lucky.jesse">
                   </div>
                 </div>
                 <div class="col-lg-6">
