@@ -2,23 +2,25 @@ export const REFERRAL_ACTIONS = [
     {
         name: "Open in jira",
         actionType: "link",
-        link: "/details",
+        link: "details",
         disabled: false
     },
     {
         name: "View Details",
         actionType: "link",
-        link: "/details",
+        link: "view-job-posting",
         disabled: false
     },
     {
         name: "Shortlist",
         actionType: "",
+        link: "view-job-posting",
         disabled: false
     },
     {
         name: "Reject",
         actionType: "",
+        link: "view-job-posting",
         disabled: false
     }
 ];
