@@ -11,11 +11,27 @@ export class ReferralService {
 
   constructor(private http: HttpClient) { }
 
+  getAllOpenings() {
+      return this.http.get(this.API_URL + '/v1/openings');
+  }
+
   getAllReferrals() {
     return this.http.get(this.API_URL + '/v1/opening/GEEK-4/referrals');
   }
 
-  getReferralById(id) {
-    
+  getReferralById(openingId) {
+    return this.http.get(this.API_URL + '/v1/opening/' + openingId + '/referrals');
+  }
+
+  getReferralStats() {
+    return this.http.get(this.API_URL + '/v1/stats');
+  }
+
+  updateStatus(openingId, referralId, status) {
+    return this.http.get(this.API_URL + `/v1/opening/${openingId}/referral/${referralId}/status/${status}`);
+  }
+
+  publishNewOpening(req) {
+    return this.http.post(this.API_URL + `/v1/create-job-opening`, req);
   }
 }
