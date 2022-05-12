@@ -89,8 +89,8 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Role</th>
-                <th scope="col">Experience</th>
-                <th scope="col">Location</th>
+                <th scope="col">Experience required</th>
+                <!-- <th scope="col">Location</th> -->
                 <th scope="col">No. of applicants</th>
                 <th scope="col">Posted on</th>
                 <th scope="col"></th>
@@ -109,19 +109,16 @@
                   </div>
                 </th>
                 <td>
-                  {{openPosition.experience}}
+                  {{openPosition.experience}} years
                 </td>
-                <td>
-                  <!-- <span class="badge badge-dot mr-4">
-                    <i class="bg-warning"></i> pending
-                  </span> -->
+                <!-- <td>
                   {{openPosition.location}}
-                </td>
+                </td> -->
                 <td>
                   {{openPosition.noOfApplicants}}
                 </td>
                 <td>
-                  {{openPosition.postedOn}}
+                  {{openPosition.postedOn | date: 'dd/MM/yyyy'}}
                 </td>
                 <!-- multi images -->
                 <!-- <td>

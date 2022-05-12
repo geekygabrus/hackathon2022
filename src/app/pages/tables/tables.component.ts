@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientHttpService } from 'src/app/services/client-http.service';
 import { OPENINGS } from './openings';
 import { OPEN_POSITION_ACTIONS } from './openPositionActions';
 
@@ -9,12 +10,16 @@ import { OPEN_POSITION_ACTIONS } from './openPositionActions';
 })
 export class TablesComponent implements OnInit {
 
-  openPositions = OPENINGS;
+  openPositions: any = OPENINGS;
   openPositionsActions = OPEN_POSITION_ACTIONS;
 
-  constructor() { }
+  constructor(private http: ClientHttpService) {
+  }
 
   ngOnInit() {
+    this.http.getRequest('/referral/v1/openings').subscribe((res) => {
+      this.openPositions = res;
+    });
   }
 
 }
