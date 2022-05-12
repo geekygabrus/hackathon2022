@@ -17,10 +17,10 @@
             <div class="col-8">
               <h3 class="mb-0">View posting</h3>
             </div>
-            <div class="col-4 text-right">
+            <!-- <div class="col-4 text-right">
               <a href="#!" class="btn btn-primary">Save</a>
 
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="card-body">
@@ -31,13 +31,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Job title</label>
-                    <input type="text" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
+                    <input type="text" id="input-title" disabled class="form-control form-control-alternative" placeholder="Title" [value]="openingDetails.title">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Department</label>
-                    <input type="text" id="input-department" class="form-control form-control-alternative" placeholder="Department" value="lucky.jesse">
+                    <input type="text" id="input-department" disabled class="form-control form-control-alternative" placeholder="Department" [value]="openingDetails.department">
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Job description</label>
-                    <textarea class="form-control" id="input-job-description" rows="3" placeholder="Job profile here ..."></textarea>
+                    <textarea class="form-control" disabled id="input-job-description" rows="3" placeholder="Job profile here ..." [value]="openingDetails.jobDesc"></textarea>
                     <!-- <input type="textarea" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse"> -->
                   </div>
                 </div>
@@ -53,42 +53,28 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-period">Recruitment period</label>
-                    <input type="date" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
+                    <label class="form-control-label" for="input-period">Posted on</label>
+                    <input type="text" id="input-title" disabled class="form-control form-control-alternative" placeholder="Posted on" [value]="getPostedOn(openingDetails.postedOn)">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-location">Location</label>
-                    <input type="text" id="input-department" class="form-control form-control-alternative" placeholder="Location" value="lucky.jesse">
+                    <label class="form-control-label" for="input-period">Closing date</label>
+                    <input type="text" id="input-title" disabled class="form-control form-control-alternative" placeholder="Closing date" [value]="getClosingDate(openingDetails.postedOn)">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label class="form-control-label" for="input-period">No. of Openings</label>
-                    <input type="number" id="input-openings" class="form-control form-control-alternative" placeholder="Experience" value="lucky.jesse">
+                    <label class="form-control-label" for="input-period">No. of Applicants</label>
+                    <input type="number" id="input-openings" disabled class="form-control form-control-alternative" placeholder="No of applicants" [value]="openingDetails.noOfApplicants">
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-location">Hiring Manager (Optional)</label>
-                    <input type="text" id="input-hiring-manager" class="form-control form-control-alternative" placeholder="Budget" value="lucky.jesse">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-period">Experience</label>
-                    <input type="text" id="input-experience" class="form-control form-control-alternative" placeholder="Experience" value="lucky.jesse">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-location">Budget (INR)</label>
-                    <input type="number" id="input-budget" class="form-control form-control-alternative" placeholder="Budget" value="lucky.jesse">
+                    <input type="text" id="input-experience" disabled class="form-control form-control-alternative" placeholder="Experience" [value]="openingDetails.experience">
                   </div>
                 </div>
               </div>

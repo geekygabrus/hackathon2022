@@ -10,6 +10,7 @@
 <div class="container-fluid mt--7">
   <div>
     <!-- <div class=""> -->
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
       <div class="card bg-secondary shadow">
         <div class="card-header bg-white border-0">
           <div class="row align-items-center">
@@ -17,27 +18,26 @@
               <h3 class="mb-0">Add new posting</h3>
             </div>
             <div class="col-4 text-right">
-              <a href="#!" class="btn btn-primary">Add</a>
+              <button class="btn btn-primary">Add</button>
               <!-- <a href="#!" class="btn btn-danger">Close position</a> -->
 
             </div>
           </div>
         </div>
         <div class="card-body">
-          <form>
             <h6 class="heading-small text-muted mb-4">Job details</h6>
             <div class="pl-lg-4">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Job title</label>
-                    <input type="text" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
+                    <input type="text" id="input-title" formControlName="title" class="form-control form-control-alternative" placeholder="Title" >
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Department</label>
-                    <input type="text" id="input-department" class="form-control form-control-alternative" placeholder="Department" value="lucky.jesse">
+                    <input type="text" id="input-department" formControlName="department" class="form-control form-control-alternative" placeholder="Department" >
                   </div>
                 </div>
               </div>
@@ -45,49 +45,31 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Job description</label>
-                    <textarea class="form-control" id="input-job-description" rows="3" placeholder="Job profile here ..."></textarea>
-                    <!-- <input type="textarea" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse"> -->
+                    <textarea class="form-control" id="input-job-description" formControlName="description" rows="3" placeholder="Job profile here ..."></textarea>
+                    <!-- <input type="textarea" id="input-title" class="form-control form-control-alternative" placeholder="Title" > -->
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-period">Recruitment period</label>
-                    <input type="date" id="input-title" class="form-control form-control-alternative" placeholder="Title" value="lucky.jesse">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                    <input type="text" id="input-department" class="form-control form-control-alternative" placeholder="Location" value="lucky.jesse">
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-period">No. of Openings</label>
-                    <input type="number" id="input-openings" class="form-control form-control-alternative" placeholder="Experience" value="lucky.jesse">
+                    <input type="number" id="input-openings" class="form-control form-control-alternative" formControlName="noOfOpenings" placeholder="Openings" >
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-location">Hiring Manager (Optional)</label>
-                    <input type="text" id="input-hiring-manager" class="form-control form-control-alternative" placeholder="Budget" value="lucky.jesse">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-period">Experience</label>
-                    <input type="text" id="input-experience" class="form-control form-control-alternative" placeholder="Experience" value="lucky.jesse">
+                    <input type="text" id="input-experience" class="form-control form-control-alternative" formControlName="experience" placeholder="Experience" >
                   </div>
                 </div>
               </div>
             </div>
             <!-- <hr class="my-4" /> -->
-          </form>
         </div>
       </div>
+    </form>
+
     <!-- </div> -->
   </div>
 </div>

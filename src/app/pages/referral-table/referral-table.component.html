@@ -44,7 +44,14 @@
                 </td>
                 <td>
                   <span class="badge badge-dot mr-4">
-                    <i class="bg-danger"></i>   
+                    <i
+                    [class.bg-danger]="referral.status.toUpperCase() === 'REJECTED'"
+                    [class.bg-info]="referral.status.toUpperCase() == 'SHORTLISTED'"
+                    [class.bg-warning]="referral.status.toUpperCase() === 'OPEN'"
+                    [class.bg-info]="referral.status.toUpperCase() === 'INTERVIEW COMPLETED'"
+                    [class.bg-success]="referral.status.toUpperCase() === 'HIRED'"
+                    >
+                  </i>   
                     {{referral.status}}
                   </span>
                 </td>
@@ -85,7 +92,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a *ngFor="let action of referralActions" class="dropdown-item" [routerLink]="action.link">{{action.name}}</a>
+                      <a *ngFor="let action of referralActions" class="dropdown-item" (click)="handleAction(action, referral)">{{action.name}}</a>
                     </div>
                   </div>
                 </td>
@@ -93,7 +100,7 @@
             </tbody>
           </table>
         </div>
-        <div class="card-footer py-4">
+        <!-- <div class="card-footer py-4">
           <nav aria-label="...">
             <ul class="pagination justify-content-end mb-0">
               <li class="page-item disabled">
@@ -117,6 +124,6 @@
               </li>
             </ul>
           </nav>
-        </div>
+        </div> -->
       </div>
     <!-- </div> -->

@@ -9,7 +9,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Open Positions</h5>
-                  <span class="h1 font-weight-bold mb-0">8</span>
+                  <span class="h1 font-weight-bold mb-0">{{stats?.totalNoOfOpenings}}</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -26,7 +26,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Applicants</h5>
-                  <span class="h1 font-weight-bold mb-0">23</span>
+                  <span class="h1 font-weight-bold mb-0">{{stats?.totalNoOfReferrals}}</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -43,7 +43,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Rejected</h5>
-                  <span class="h1 font-weight-bold mb-0">4</span>
+                  <span class="h1 font-weight-bold mb-0">{{stats?.totalNoOfRejectedCandidates}}</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -59,8 +59,8 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Shortlisted</h5>
-                  <span class="h1 font-weight-bold mb-0">4</span>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Hired</h5>
+                  <span class="h1 font-weight-bold mb-0">{{stats?.totalNoOfHiredCandidates}}</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -88,40 +88,38 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Role</th>
+                <th scope="col">Job Profile</th>
+                <th scope="col">Opening ID</th>
                 <th scope="col">Experience</th>
-                <th scope="col">Location</th>
                 <th scope="col">No. of applicants</th>
                 <th scope="col">Posted on</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let openPosition of openPositions">
+              <tr *ngFor="let opening of openings">
                 <th scope="row">
                   <div class="media align-items-center">
                     <!-- <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
                       <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
                     </a> -->
                     <div class="media-body">
-                      <a class="mb-0 text-sm cursor-pointer" (click)="navigateToPositionDetails(openPosition.id)">{{openPosition.title}}</a>
+                      <a class="mb-0 text-sm cursor-pointer" (click)="navigateToPositionDetails(opening.id)">{{opening.title}}</a>
                     </div>
                   </div>
                 </th>
+                
                 <td>
-                  {{openPosition.experience}}
+                  {{opening.jiraId}}
                 </td>
                 <td>
-                  <!-- <span class="badge badge-dot mr-4">
-                    <i class="bg-warning"></i> pending
-                  </span> -->
-                  {{openPosition.location}}
+                  {{opening.experience}} years
                 </td>
                 <td>
-                  {{openPosition.noOfApplicants}}
+                  {{opening.noOfApplicants}}
                 </td>
                 <td>
-                  {{openPosition.postedOn}}
+                  {{opening.postedOn | date}}
                 </td>
                 <!-- multi images -->
                 <!-- <td>
@@ -157,7 +155,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a *ngFor="let action of openPositionsActions" class="dropdown-item" [routerLink]="action.link">{{action.name}}</a>
+                      <a *ngFor="let action of openPositionsActions" class="dropdown-item" (click)="handleAction(action, opening)">{{action.name}}</a>
                     </div>
                   </div>
                 </td>
@@ -165,7 +163,7 @@
             </tbody>
           </table>
         </div>
-        <div class="card-footer py-4">
+        <!-- <div class="card-footer py-4">
           <nav aria-label="...">
             <ul class="pagination justify-content-end mb-0">
               <li class="page-item disabled">
@@ -189,13 +187,9 @@
               </li>
             </ul>
           </nav>
-        </div>
+        </div> -->
       </div>
     </div>
-  </div>
-
-  <div class="mt-5">
-    <app-referral-table></app-referral-table>
   </div>
 
 </div>

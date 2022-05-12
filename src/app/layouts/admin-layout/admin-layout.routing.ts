@@ -12,7 +12,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'add-job-posting', component: AddJobPostingComponent },
-    { path: 'view-job-posting', component: ViewJobPostingComponent },
+    { path: 'view-job-posting/:openingId', component: ViewJobPostingComponent },
     { path: 'referrals', component: ReferralsComponent },
     { path: 'referral-details', component: ReferralDetailsComponent },
     { path: 'icons', component: IconsComponent }

@@ -24,7 +24,8 @@ import { ViewJobPostingComponent } from 'src/app/pages/view-job-posting/view-job
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    ReactiveFormsModule
   ],
   declarations: [
     DashboardComponent,
