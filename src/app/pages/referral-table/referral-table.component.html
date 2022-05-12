@@ -10,7 +10,7 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Referral ID</th>
-                <th scope="col">Role</th>
+                <th scope="col">Name</th>
                 <th scope="col">Referred by</th>
                 <th scope="col">Experience</th>
                 <th scope="col">Status</th>
@@ -26,12 +26,12 @@
                       <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
                     </a> -->
                     <div class="media-body">
-                      <span class="mb-0 text-sm">{{referral.referralId}}</span>
+                      <a class="mb-0 text-sm" (click)="navigateToJobOpening(referral.referralId)" target="_blank">{{referral.referralId}}</a>
                     </div>
                   </div>
                 </th>
                 <td>
-                  {{referral.role}}
+                  {{referral.name}}
                 </td>
                 <td>
                   <!-- <span class="badge badge-dot mr-4">
@@ -40,7 +40,7 @@
                   {{referral.referredBy}}
                 </td>
                 <td>
-                  {{referral.experience}}
+                  {{referral.experience}} years
                 </td>
                 <td>
                   <span class="badge badge-dot mr-4">
@@ -49,7 +49,7 @@
                   </span>
                 </td>
                 <td>
-                  {{referral.referredOn}}
+                  {{referral.referredOn | date}}
                 </td>
                 <!-- multi images -->
                 <!-- <td>
@@ -85,7 +85,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a *ngFor="let action of referralActions" class="dropdown-item" href="action.link">{{action.name}}</a>
+                      <a *ngFor="let action of referralActions" class="dropdown-item" [routerLink]="action.link">{{action.name}}</a>
                     </div>
                   </div>
                 </td>
