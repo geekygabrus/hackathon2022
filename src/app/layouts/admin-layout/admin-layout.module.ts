@@ -15,6 +15,7 @@ import { AddJobPostingComponent } from 'src/app/pages/add-job-posting/add-job-po
 import { ReferralsComponent } from 'src/app/pages/referrals/referrals.component';
 import { ReferralDetailsComponent } from 'src/app/pages/referral-details/referral-details.component';
 import { ReferralTableComponent } from 'src/app/pages/referral-table/referral-table.component';
+import { ViewJobPostingComponent } from 'src/app/pages/view-job-posting/view-job-posting.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ReferralTableComponent } from 'src/app/pages/referral-table/referral-ta
     UserProfileComponent,
     TablesComponent,
     AddJobPostingComponent,
+    ViewJobPostingComponent,
     IconsComponent,
     ReferralsComponent,
     ReferralTableComponent,
