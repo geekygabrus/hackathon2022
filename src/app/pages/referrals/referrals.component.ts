@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OPEN_POSITION_ACTIONS } from './openPositionActions';
+import { OPEN_POSITION_ACTIONS } from './openPosition.actions';
 import { REFERRALS } from './referrals';
 
 @Component({

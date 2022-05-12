@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { REFERRAL_ACTIONS } from '../referrals/referral.actions';
 import { REFERRALS } from '../referrals/referrals';
 import { OPEN_POSITION_ACTIONS } from '../tables/openPositionActions';
 
@@ -10,7 +11,7 @@ import { OPEN_POSITION_ACTIONS } from '../tables/openPositionActions';
 export class ReferralTableComponent implements OnInit {
 
   referrals = REFERRALS;
-  openPositionsActions = OPEN_POSITION_ACTIONS;
+  referralActions = REFERRAL_ACTIONS;
 
   constructor() { }
 

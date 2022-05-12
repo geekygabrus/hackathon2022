@@ -1,14 +1,17 @@
 export const OPEN_POSITION_ACTIONS = [
     {
         name: "View Details",
-        actionType: "link",
-        link: "/details",
+        actionType: "view",
+        disabled: false
+    },
+    {
+        name: "Edit position",
+        actionType: "edit",
         disabled: false
     },
     {
         name: "Close position",
-        actionType: "popup",
-        link: "/details",
+        actionType: "close",
         disabled: false
     }
 ];

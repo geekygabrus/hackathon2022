@@ -1,9 +1,6 @@
 
-<!-- Page content -->
-<div class="container-fluid mt--7">
   <!-- Table -->
-  <div class="row">
-    <div class="col">
+    <!-- <div class="col"> -->
       <div class="card shadow">
         <div class="card-header border-0">
           <h3 class="mb-0">Referrals</h3>
@@ -88,7 +85,7 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a *ngFor="let action of openPositionsActions" class="dropdown-item" href="action.link">{{action.name}}</a>
+                      <a *ngFor="let action of referralActions" class="dropdown-item" href="action.link">{{action.name}}</a>
                     </div>
                   </div>
                 </td>
@@ -122,7 +119,4 @@
           </nav>
         </div>
       </div>
-    </div>
-  </div>
-
-</div>
+    <!-- </div> -->
