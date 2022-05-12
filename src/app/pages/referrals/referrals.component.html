@@ -82,46 +82,53 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <h3 class="mb-0">Current Openings</h3>
+          <h3 class="mb-0">Referrals</h3>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
+                <th scope="col">Referral ID</th>
                 <th scope="col">Role</th>
+                <th scope="col">Referred by</th>
                 <th scope="col">Experience</th>
-                <th scope="col">Location</th>
-                <th scope="col">No. of applicants</th>
-                <th scope="col">Posted on</th>
+                <th scope="col">Status</th>
+                <th scope="col">Referred on</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let openPosition of openPositions">
+              <tr *ngFor="let referral of referrals">
                 <th scope="row">
                   <div class="media align-items-center">
                     <!-- <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
                       <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
                     </a> -->
                     <div class="media-body">
-                      <span class="mb-0 text-sm">{{openPosition.title}}</span>
+                      <span class="mb-0 text-sm">{{referral.referralId}}</span>
                     </div>
                   </div>
                 </th>
                 <td>
-                  {{openPosition.experience}}
+                  {{referral.role}}
                 </td>
                 <td>
                   <!-- <span class="badge badge-dot mr-4">
                     <i class="bg-warning"></i> pending
                   </span> -->
-                  {{openPosition.location}}
+                  {{referral.referredBy}}
                 </td>
                 <td>
-                  {{openPosition.noOfApplicants}}
+                  {{referral.experience}}
                 </td>
                 <td>
-                  {{openPosition.postedOn}}
+                  <span class="badge badge-dot mr-4">
+                    <i class="bg-danger"></i>   
+                    {{referral.status}}
+                  </span>
+                </td>
+                <td>
+                  {{referral.referredOn}}
                 </td>
                 <!-- multi images -->
                 <!-- <td>
@@ -193,7 +200,5 @@
       </div>
     </div>
   </div>
-
-  <app-referral-table></app-referral-table>
 
 </div>
