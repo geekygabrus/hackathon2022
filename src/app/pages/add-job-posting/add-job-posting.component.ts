@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddJobPostingComponent implements OnInit {
 
+  locations = [
+    {
+      id: 1,
+      label: 'Gurugram'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onLocationSelected($event) {
+    
   }
 
 }
