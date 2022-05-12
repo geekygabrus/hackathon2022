@@ -15071,7 +15071,12 @@ button.bg-lighter:focus
 
 .bg-gradient-danger
 {
-    background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important;
+    background: linear-gradient(87deg, #e20074 0, #e20074 100%) !important;
+}
+
+.bg-gradient-magenta
+{
+    background: linear-gradient(87deg, #e20074 0, #f56036 100%) !important;
 }
 
 .bg-gradient-light
@@ -15427,7 +15432,7 @@ button.section-darker:focus
 
 .bg-gradient-danger
 {
-    background: linear-gradient(87deg, #f5365c 0, #f56036 100%) !important;
+    background: linear-gradient(87deg, #e20074 0, #e20074 100%) !important;
 }
 
 .bg-gradient-light
@@ -21866,4 +21871,8 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle
     bottom: 0;
 
     height: 3px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
