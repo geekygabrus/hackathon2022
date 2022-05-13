@@ -1,0 +1,26 @@
+<div
+  *ngFor="let line of numberOfLines"
+  class="shimmer-container rounded d-flex"
+  [ngStyle]="{ background: background }"
+  [style.margin-left.px]="marginX"
+  [style.margin-right.px]="marginX"
+  [style.margin-top.px]="marginY"
+  [style.margin-bottom.px]="marginY"
+>
+  <div *ngIf="!hideCircle">
+    <div class="circle animate" [ngClass]="circleSize"></div>
+  </div>
+  <div *ngFor="let subLine of numberOfSubLines" class="w-100">
+    <div class="line animate w-30" [ngClass]="[lineHeight]"></div>
+    <div
+      [hidden]="subLines < 2"
+      class="line animate"
+      [ngClass]="[lineHeight, lineWidth]"
+    ></div>
+    <div
+      [hidden]="subLines < 3"
+      class="line animate w-70"
+      [ngClass]="[lineHeight, lineWidth]"
+    ></div>
+  </div>
+</div>

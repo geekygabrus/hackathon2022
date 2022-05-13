@@ -5,6 +5,15 @@
         <div class="card-header border-0">
           <h3 class="mb-0">Referrals</h3>
         </div>
+        <ng-container *ngIf="loading">
+          <app-list-shimmer
+              [repeat]="5"
+              [subLines]="2"
+              [lineWidth]="'w-70'"
+            ></app-list-shimmer>
+          </ng-container>
+  
+          <ng-container *ngIf="!loading">
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
@@ -100,6 +109,7 @@
             </tbody>
           </table>
         </div>
+        </ng-container>
         <!-- <div class="card-footer py-4">
           <nav aria-label="...">
             <ul class="pagination justify-content-end mb-0">

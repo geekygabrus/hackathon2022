@@ -1,0 +1,144 @@
+:host {
+  // .shimmer-container {
+  //   padding: 8px 6px;
+  //   height: 100%;
+  // }
+
+  .shimmer-container {
+    width: 100%;
+    align-items: center;
+    // margin: 16px 0;
+
+    padding: 8px 26px;
+    height: 100%;
+
+    .circle {
+      height: 65px;
+      width: 70px;
+      border-radius: 50%;
+
+      &.xs {
+        height: 16px;
+        width: 17px;
+      }
+      &.sm {
+        height: 24px;
+        width: 25px;
+      }
+      &.md {
+        height: 32px;
+        width: 33px;
+      }
+      &.lg {
+        height: 44px;
+        width: 45px;
+      }
+      &.xl {
+        height: 64px;
+        width: 65px;
+      }
+      &.xxl {
+        height: 78px;
+        width: 80px;
+      }
+    }
+    .line {
+      height: 8px;
+      flex: 1;
+      background: #777;
+      margin: 12px 12px;
+      border-radius: 4px;
+
+      &.h-xs {
+        height: 6px;
+      }
+      &.h-sm {
+        height: 8px;
+      }
+      &.h-md {
+        height: 16px;
+      }
+      &.h-lg {
+        height: 24px;
+      }
+      &.h-xl {
+        height: 48px;
+      }
+      &.h-xxl {
+        height: 72px;
+      }
+
+      &.w-30 {
+        width: 30%;
+      }
+      &.w-70 {
+        width: 70%;
+      }
+    }
+    .square {
+      height: 104px;
+      width: 100px;
+      border-radius: 4px;
+    }
+    .rectangle {
+      display: block !important;
+      width: 100%;
+      height: 100px;
+      border-radius: 4px;
+      &.h-xs {
+        height: 18px;
+      }
+      &.h-sm {
+        height: 24px;
+      }
+      &.h-md {
+        height: 48px;
+      }
+      &.h-lg {
+        height: 72px;
+      }
+      &.h-xl {
+        height: 96px;
+      }
+
+      &.w-sm {
+        width: 12%;
+      }
+      &.w-md {
+        width: 24%;
+      }
+      &.w-lg {
+        width: 48%;
+      }
+      &.w-xl {
+        width: 72%;
+      }
+    }
+
+    @keyframes fullView {
+      100% {
+        width: 100%;
+      }
+    }
+
+    .animate {
+      animation: shimmer 4s infinite linear;
+      background: linear-gradient(
+        to right,
+        #eff1f3 4%,
+        #e2e2e2 25%,
+        #eff1f3 36%
+      );
+      background-size: 1000px 100%;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+  }
+}
