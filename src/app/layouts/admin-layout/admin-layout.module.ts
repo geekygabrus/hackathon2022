@@ -15,6 +15,7 @@ import { ReferralsComponent } from 'src/app/pages/referrals/referrals.component'
 import { ReferralDetailsComponent } from 'src/app/pages/referral-details/referral-details.component';
 import { ReferralTableComponent } from 'src/app/pages/referral-table/referral-table.component';
 import { ViewJobPostingComponent } from 'src/app/pages/view-job-posting/view-job-posting.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ViewJobPostingComponent } from 'src/app/pages/view-job-posting/view-job
     HttpClientModule,
     NgbModule,
     ClipboardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule
   ],
   declarations: [
     DashboardComponent,

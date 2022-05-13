@@ -5,8 +5,20 @@
       <div class="row">
         <div class="col-xl-3 col-lg-6">
           <div class="card card-stats mb-4 mb-xl-0">
+            <ng-container *ngIf="loadingStats">
+              <app-list-shimmer
+              [repeat]="1"
+              [subLines]="2"
+              [lineWidth]="'w-70'"
+              [hideCircle]="true"
+              [marginY]="'8px'"
+            ></app-list-shimmer>
+          </ng-container>
+
+          <ng-container *ngIf="!loadingStats">
             <div class="card-body">
               <div class="row">
+
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">Open Positions</h5>
                   <span class="h1 font-weight-bold mb-0">{{stats?.totalNoOfOpenings}}</span>
@@ -18,10 +30,22 @@
                 </div>
               </div>
             </div>
+            </ng-container>
           </div>
         </div>
         <div class="col-xl-3 col-lg-6">
           <div class="card card-stats mb-4 mb-xl-0">
+            <ng-container *ngIf="loadingStats">
+              <app-list-shimmer
+              [repeat]="1"
+              [subLines]="2"
+              [lineWidth]="'w-70'"
+              [hideCircle]="true"
+              [marginY]="'8px'"
+            ></app-list-shimmer>
+          </ng-container>
+
+          <ng-container *ngIf="!loadingStats">
             <div class="card-body">
               <div class="row">
                 <div class="col">
@@ -35,10 +59,22 @@
                 </div>
               </div>
             </div>
+            </ng-container>
           </div>
         </div>
         <div class="col-xl-3 col-lg-6">
           <div class="card card-stats mb-4 mb-xl-0">
+            <ng-container *ngIf="loadingStats">
+              <app-list-shimmer
+              [repeat]="1"
+              [subLines]="2"
+              [lineWidth]="'w-70'"
+              [hideCircle]="true"
+              [marginY]="'8px'"
+            ></app-list-shimmer>
+          </ng-container>
+
+          <ng-container *ngIf="!loadingStats">
             <div class="card-body">
               <div class="row">
                 <div class="col">
@@ -52,10 +88,22 @@
                 </div>
               </div>
             </div>
+            </ng-container>
           </div>
         </div>
         <div class="col-xl-3 col-lg-6">
           <div class="card card-stats mb-4 mb-xl-0">
+            <ng-container *ngIf="loadingStats">
+              <app-list-shimmer
+              [repeat]="1"
+              [subLines]="2"
+              [lineWidth]="'w-70'"
+              [hideCircle]="true"
+              [marginY]="'8px'"
+            ></app-list-shimmer>
+          </ng-container>
+
+          <ng-container *ngIf="!loadingStats">
             <div class="card-body">
               <div class="row">
                 <div class="col">
@@ -69,6 +117,7 @@
                 </div>
               </div>
             </div>
+            </ng-container>
           </div>
         </div>
       </div>
@@ -84,6 +133,16 @@
         <div class="card-header border-0">
           <h3 class="mb-0">Current Openings</h3>
         </div>
+
+        <ng-container *ngIf="loadingOpenings">
+        <app-list-shimmer
+            [repeat]="5"
+            [subLines]="2"
+            [lineWidth]="'w-70'"
+          ></app-list-shimmer>
+        </ng-container>
+
+        <ng-container *ngIf="!loadingOpenings">
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
@@ -188,6 +247,8 @@
             </ul>
           </nav>
         </div> -->
+
+        </ng-container>
       </div>
     </div>
   </div>

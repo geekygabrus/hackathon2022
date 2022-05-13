@@ -15,7 +15,9 @@ export class DashboardComponent implements OnInit {
 
   openings: any = [];
   openPositionsActions = OPEN_POSITION_ACTIONS;
+  loadingOpenings = false;
   stats;
+  loadingStats = false;
 
 
   constructor(
@@ -29,21 +31,25 @@ export class DashboardComponent implements OnInit {
   }
 
   getReferralStats() {
+    this.loadingStats = true;
     this.referralService.getReferralStats().subscribe(res => {
+      this.loadingStats = false;
       this.stats = res;
     },
     err => {
-
+      this.loadingStats = false;
     });
   }
 
   getAllOpenings() {
+    this.loadingOpenings = true;
     this.referralService.getAllOpenings().subscribe(res => {
+      this.loadingOpenings = false;
       this.openings = res;
       console.log('openings ', this.openings);
     },
     err => {
-
+      this.loadingOpenings = false;
     });
   }
 
