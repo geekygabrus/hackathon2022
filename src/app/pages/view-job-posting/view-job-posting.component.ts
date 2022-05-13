@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OpeningsService } from '../tables/openings-service';
@@ -9,19 +10,21 @@ import { OpeningsService } from '../tables/openings-service';
 })
 export class ViewJobPostingComponent implements OnInit {
 
-  openingId: any = '';
-  constructor(private route: ActivatedRoute, private openingsService: OpeningsService) { }
+  openingDetails;
+
+  constructor(private location: Location) { }
 
   ngOnInit() {
-    this.openingId = this.route.snapshot.queryParamMap.get('opening-id');
-    this.openingsService.getOpenings();
+    this.openingDetails = this.location.getState();
   }
 
-  get getOpeningData() {
-    if(this.openingsService.openPositions.length && this.openingId) {
-      return this.openingsService.openPositions.find(item => item.jiraId === this.openingId);
-    }
-    return '';
+  getPostedOn(date) {
+    return new Date(date).toLocaleDateString('en-US');
+  }
+
+  getClosingDate(date) {
+    let postedDate = new Date(date);
+    return new Date(postedDate.setMonth(postedDate.getMonth() + 1)).toLocaleDateString('en-US');
   }
 
 }
