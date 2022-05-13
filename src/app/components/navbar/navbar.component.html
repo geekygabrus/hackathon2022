@@ -19,9 +19,10 @@
       <li>
         <a class="nav-link pr-0" role="button" [routerLink]="'/add-job-posting'">
         <div class="media align-items-center">
-          <span class="avatar avatar-sm rounded-circle">
+          <span class="avatar avatar-sm rounded-circle" style="background-color: '#11cdef';">
             <!-- <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg"> -->
-            <i class="ni ni-fat-add"></i>
+            <!-- <i class="ni ni-fat-add"></i> -->
+            <h2 class="margin-auto text-white mt-1">+</h2>
           </span>
           <div class="media-body ml-2 d-none d-lg-block">
             <span class="mb-0 text-sm  font-weight-bold">Add new posting</span>
@@ -36,14 +37,14 @@
               <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg">
             </span>
             <div class="media-body ml-2 d-none d-lg-block">
-              <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+              <span class="mb-0 text-sm  font-weight-bold">HR Recruiter</span>
             </div>
           </div>
         </a>
         <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
           <a href="#!" class="dropdown-item">
             <i class="ni ni-user-run"></i>
-            <a [routerLink]="'login'">Logout</a>
+            <a [routerLink]="'/login'">Logout</a>
           </a>
         </div>
       </li>
